@@ -1,0 +1,15 @@
+{
+    "display": {
+        "fullscreen": true,
+        "width": 1920,
+        "height": 1080,
+        "language": "bilingual",
+        "theme": "dark",
+        "carousel_interval_seconds": 12,
+        "api_refresh_seconds": 25,
+        "show_clock": true,
+        "hide_cursor": false,
+        "max_eta_entries": 3
+    },
+    "tracked_stops": []
+}
