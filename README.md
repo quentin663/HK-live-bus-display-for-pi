@@ -28,6 +28,7 @@ The project currently supports **KMB**, **LWB**, and **Citybus** data using Hong
 ```text
 .
 ├── config.example.json
+├── run.sh
 ├── hk_bus_display.py
 ├── route_and_stop_finder_tool.py
 ├── LICENSE
@@ -72,27 +73,26 @@ sudo apt update
 sudo apt install python3-tk
 ```
 
-## Installation
+## Quick start
 
-Clone the repository:
+On a Raspberry Pi with a desktop session and Tkinter installed, run:
 
 ```bash
 git clone https://github.com/quentin663/HK-live-bus-display-for-pi.git
 cd HK-live-bus-display-for-pi
+./run.sh
 ```
 
-Create your local config, then add stops with the helper or edit `config.json`:
+The first run creates a local `config.json` from the example. Add a stop with `python3 route_and_stop_finder_tool.py` or edit the file, then run `./run.sh` again. Your chosen stops stay in the ignored local config.
+
+For later updates from a clone of the **current history**:
 
 ```bash
-cp config.example.json config.json
-python3 route_and_stop_finder_tool.py
+git pull --ff-only
+./run.sh
 ```
 
-Run the display:
-
-```bash
-python3 hk_bus_display.py
-```
+Because the repository history was replaced in September 2026, clones made before that replacement cannot use a normal `git pull` for their first update. Back up their `config.json`, clone the repository into a new directory, then copy the backed-up config into the new clone. Subsequent pulls work normally.
 
 ## Configuration
 
